@@ -10,7 +10,7 @@ import list from "../assets/market/list.png";
 import sold from "../assets/market/sold-badge.webp"
 
 function ProductPage() {
-  const API = import.meta.env.VITE_API_URL
+  const API = 'https://x76sbodtq0.execute-api.us-east-1.amazonaws.com'
   const {id} = useParams();
   const location = useLocation();
   const [product, setProduct] = useState(location.state?.itemData || null);
