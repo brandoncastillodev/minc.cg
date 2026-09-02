@@ -6,7 +6,7 @@ import viewCart from "../assets/market/viewCart.png"
 import axios from 'axios'
 
 function Market(){
-  const API = 'https://x76sbodtq0.execute-api.us-east-1.amazonaws.com'
+  const API = import.meta.env.VITE_API_URL
   const [allProducts, setAllProducts] = useState([]);
   const [waiting, setWaiting] = useState(true);
   const [refreshKey, setRefreshKey] = useState(0);

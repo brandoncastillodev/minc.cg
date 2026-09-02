@@ -1,6 +1,6 @@
 import addToCart from "../assets/market/addToCart2.png"
 
-const API = 'https://x76sbodtq0.execute-api.us-east-1.amazonaws.com'
+const API = import.meta.env.VITE_API_URL
 
 function AddCartButton({product}){
   return(
