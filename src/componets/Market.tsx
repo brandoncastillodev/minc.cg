@@ -4,11 +4,12 @@ import marketTitle from "../assets/market/marketTitle.png"
 import descriptionBox from "../assets/market/descriptBox.png"
 import viewCart from "../assets/market/viewCart.png"
 import axios from 'axios'
+import { getCachedProducts, setCachedProducts } from '../utils/marketCache'
 
 function Market(){
   const API = import.meta.env.VITE_API_URL
-  const [allProducts, setAllProducts] = useState([]);
-  const [waiting, setWaiting] = useState(true);
+  const [allProducts, setAllProducts] = useState(getCachedProducts() || []);
+  const [waiting, setWaiting] = useState(getCachedProducts() == null);
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
@@ -34,10 +35,12 @@ function Market(){
     const fetchProducts = async () => {
       try {
         const res = await axios.get(`${API}/products`);
+        setCachedProducts(res.data);
         setAllProducts(res.data);
-        setWaiting(false)
       } catch (error) {
         console.error("Error fetching products:", error);
+      } finally {
+        setWaiting(false);
       }
     };
 

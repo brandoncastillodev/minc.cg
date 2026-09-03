@@ -2,6 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { MemoryRouter } from 'react-router-dom'
 import Market from '../Market'
+import { clearCachedProducts } from '../../utils/marketCache'
 
 vi.mock('axios', () => ({
   default: {
@@ -31,6 +32,7 @@ const renderMarket = () =>
 
 describe('Market', () => {
   beforeEach(() => {
+    clearCachedProducts()
     vi.clearAllMocks()
   })
 
