@@ -1,4 +1,4 @@
-![Preview](https://res.cloudinary.com/daynclfo8/image/upload/v1765988368/2025-12-17-12-29-31_sczlz1.png)
+![Preview](https://res.cloudinary.com/daynclfo8/image/upload/v1788441433/Screenshot_2026-09-03_at_10-16-44_minc.cg_h0bnxd.png)
 
 
 # Minc CG
